@@ -20,3 +20,14 @@ type Appointment struct {
 	ContactNumber string             `bson:"contactNumber" json:"contactNumber"`
 	CreatedAt     time.Time          `bson:"createdAt"     json:"createdAt"`
 }
+
+// Patient holds login information for a patient
+type Patient struct {
+	ID          primitive.ObjectID `bson:"_id,omitempty" json:"id"`
+	Username    string             `bson:"username"      json:"username"`
+	Email       string             `bson:"email"         json:"email"`
+	Password    string             `bson:"password"      json:"-"`
+	ResetToken  string             `bson:"resetToken"    json:"-"`
+	ResetExpiry time.Time          `bson:"resetExpiry"   json:"-"`
+	CreatedAt   time.Time          `bson:"createdAt"     json:"createdAt"`
+}
